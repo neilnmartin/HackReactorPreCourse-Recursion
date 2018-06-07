@@ -41,12 +41,12 @@ var stringifyJSON = function(obj) {
       objstr += `{`
       for(var key in obj){
         if(obj[key] !== undefined && typeof obj[key] !== `function`){
-          thispair = stringifyJSON(key) + `: ` + stringifyJSON(obj[key])
+          thispair = stringifyJSON(key) + `:` + stringifyJSON(obj[key])
           pairs.push(thispair)
         }
       }
       // console.log(pairs)
-      objstr += pairs.join(`, `) + `}`
+      objstr += pairs.join(`,`) + `}`
       return objstr
       // only stringify if the value is not undefined or function
       // use same logic with arrays with the object - stringify 
