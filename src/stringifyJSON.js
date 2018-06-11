@@ -3,8 +3,8 @@
 
 // but you don't so you're going to write it from scratch:
 
+
 var stringifyJSON = function(obj) {
-  var stringifyJSON = function(obj) {
     // var opensq = `[`
     // var closedsq = `]`
     // var opencurly = `{`
@@ -15,11 +15,17 @@ var stringifyJSON = function(obj) {
     if(obj === null){
       return `null`
     }
+    if(obj === true){
+      return "true"
+    }
+    if(obj === false){
+      return "false"
+    }
     if(typeof obj === `number`){
       return `` + obj
     }
-    if(typeof obj === `string`){
-      return `'${obj}'`
+    if(typeof obj === "string"){
+      return `"${obj}"`
     }
     if(Array.isArray(obj)){
       var stringed = ``
@@ -57,5 +63,4 @@ var stringifyJSON = function(obj) {
     // can accept undefined, null, numbers, arrays, objects 
     // must use recursion
     //     > call an inner function within itself
-  };
 };
